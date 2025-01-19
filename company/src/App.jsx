@@ -36,7 +36,6 @@ import {
   MenuIcon,
 } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 function App() {
   const [isOpen,setIsOpen]=useState(false)
@@ -53,30 +52,30 @@ function App() {
               </span>
             </div>
             <div className=" hidden md:flex items-center space-x-8">
-              <Link
-                to="#home"
+              <a
+                href="#home"
                 className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               >
                 Home
-              </Link>
-              <Link
-                to="#services"
+              </a>
+              <a
+                href="#services"
                 className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               >
                 Services
-              </Link>
-              <Link
-                to="#about"
+              </a>
+              <a
+                href="#about"
                 className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               >
                 About
-              </Link>
-              < Link
-                to="#contact"
+              </a>
+              <a
+                href="#contact"
                 className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               >
                 Contact
-              </Link>
+              </a>
             </div>
             <ThemeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen} >
@@ -93,37 +92,37 @@ function App() {
                 </SheetHeader>
                 <SheetDescription>
                   <div className=" flex flex-col items-center mt-6 gap-4">
-                    < Link
-                      to="#home"
+                    <a
+                      href="#home"
                       className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                       onClick={()=>setIsOpen(false)}
                     >
                       Home
-                    </Link>
-                    <Link
-                      to="#services"
+                    </a>
+                    <a
+                      href="#services"
                       className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                       onClick={()=>setIsOpen(false)}
 
                     >
                       Services
-                    </Link>
-                    <Link
-                      to="#about"
+                    </a>
+                    <a
+                      href="#about"
                       className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                       onClick={()=>setIsOpen(false)}
 
                     >
                       About
-                    </Link>
-                    <Link
-                      to="#contact"
+                    </a>
+                    <a
+                      href="#contact"
                       className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                       onClick={()=>setIsOpen(false)}
 
                     >
                       Contact
-                    </Link>
+                    </a>
                   </div>
                 </SheetDescription>
               </SheetContent>
@@ -145,8 +144,7 @@ function App() {
                 technology that builds your future.
               </p>
               <button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-3 rounded-full font-semibold flex items-center space-x-2 group transform hover:-translate-y-1 transition-all duration-300">
-                <Link
-                 to="#contact">Get Started</Link>
+                <a href="#contact">Get Started</a>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -381,18 +379,18 @@ function App() {
               </p>
               <div className="flex space-x-4">
                 {[
-                  { icon: <Facebook className="w-5 h-5" />, to: "#" },
-                  { icon: <Twitter className="w-5 h-5" />, to: "#" },
-                  { icon: <LinkedIn className="w-5 h-5" />, to: "#" },
-                  { icon: <Instagram className="w-5 h-5" />, to: "#" },
+                  { icon: <Facebook className="w-5 h-5" />, href: "#" },
+                  { icon: <Twitter className="w-5 h-5" />, href: "#" },
+                  { icon: <LinkedIn className="w-5 h-5" />, href: "#" },
+                  { icon: <Instagram className="w-5 h-5" />, href: "#" },
                 ].map((social, index) => (
-                  <Link
+                  <a
                     key={index}
                     href={social.href}
                     className="text-gray-600 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400 transition-colors"
                   >
                     {social.icon}
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
@@ -404,12 +402,12 @@ function App() {
                 {["Home", "About ", "Services", "Contact"].map(
                   (link, index) => (
                     <li key={index}>
-                      <Link
-                        to={`#${link.toLowerCase().replace(" ", "-")}`}
+                      <a
+                        href={`#${link.toLowerCase().replace(" ", "-")}`}
                         className="text-gray-600 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400 transition-colors"
                       >
                         {link}
-                      </Link>
+                      </a>
                     </li>
                   )
                 )}
@@ -428,12 +426,12 @@ function App() {
                   "24/7 Support",
                 ].map((service, index) => (
                   <li key={index}>
-                    <Link
-                      to="#services"
+                    <a
+                      href="#services"
                       className="text-gray-600 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400 transition-colors"
                     >
                       {service}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
