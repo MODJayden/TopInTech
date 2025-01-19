@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeToggle } from "./components/ThemeToggle";
 import image from "./assets/image.jpg"
+
 import {
   Sheet,
   SheetContent,
@@ -35,6 +36,7 @@ import {
   MenuIcon,
 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function App() {
   const [isOpen,setIsOpen]=useState(false)
@@ -51,30 +53,30 @@ function App() {
               </span>
             </div>
             <div className=" hidden md:flex items-center space-x-8">
-              <a
-                href="#home"
+              <Link
+                to="#home"
                 className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               >
                 Home
-              </a>
-              <a
-                href="#services"
+              </Link>
+              <Link
+                to="#services"
                 className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               >
                 Services
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                to="#about"
                 className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               >
                 About
-              </a>
-              <a
-                href="#contact"
+              </Link>
+              < Link
+                to="#contact"
                 className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               >
                 Contact
-              </a>
+              </Link>
             </div>
             <ThemeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen} >
@@ -91,37 +93,37 @@ function App() {
                 </SheetHeader>
                 <SheetDescription>
                   <div className=" flex flex-col items-center mt-6 gap-4">
-                    <a
-                      href="#home"
+                    < Link
+                      to="#home"
                       className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                       onClick={()=>setIsOpen(false)}
                     >
                       Home
-                    </a>
-                    <a
-                      href="#services"
+                    </Link>
+                    <Link
+                      to="#services"
                       className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                       onClick={()=>setIsOpen(false)}
 
                     >
                       Services
-                    </a>
-                    <a
-                      href="#about"
+                    </Link>
+                    <Link
+                      to="#about"
                       className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                       onClick={()=>setIsOpen(false)}
 
                     >
                       About
-                    </a>
-                    <a
-                      href="#contact"
+                    </Link>
+                    <Link
+                      to="#contact"
                       className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                       onClick={()=>setIsOpen(false)}
 
                     >
                       Contact
-                    </a>
+                    </Link>
                   </div>
                 </SheetDescription>
               </SheetContent>
@@ -143,7 +145,8 @@ function App() {
                 technology that builds your future.
               </p>
               <button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-3 rounded-full font-semibold flex items-center space-x-2 group transform hover:-translate-y-1 transition-all duration-300">
-                <a href="#contact">Get Started</a>
+                <Link
+                 to="#contact">Get Started</Link>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -378,18 +381,18 @@ function App() {
               </p>
               <div className="flex space-x-4">
                 {[
-                  { icon: <Facebook className="w-5 h-5" />, href: "#" },
-                  { icon: <Twitter className="w-5 h-5" />, href: "#" },
-                  { icon: <LinkedIn className="w-5 h-5" />, href: "#" },
-                  { icon: <Instagram className="w-5 h-5" />, href: "#" },
+                  { icon: <Facebook className="w-5 h-5" />, to: "#" },
+                  { icon: <Twitter className="w-5 h-5" />, to: "#" },
+                  { icon: <LinkedIn className="w-5 h-5" />, to: "#" },
+                  { icon: <Instagram className="w-5 h-5" />, to: "#" },
                 ].map((social, index) => (
-                  <a
+                  <Link
                     key={index}
                     href={social.href}
                     className="text-gray-600 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400 transition-colors"
                   >
                     {social.icon}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -401,12 +404,12 @@ function App() {
                 {["Home", "About ", "Services", "Contact"].map(
                   (link, index) => (
                     <li key={index}>
-                      <a
-                        href={`#${link.toLowerCase().replace(" ", "-")}`}
+                      <Link
+                        to={`#${link.toLowerCase().replace(" ", "-")}`}
                         className="text-gray-600 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400 transition-colors"
                       >
                         {link}
-                      </a>
+                      </Link>
                     </li>
                   )
                 )}
@@ -425,12 +428,12 @@ function App() {
                   "24/7 Support",
                 ].map((service, index) => (
                   <li key={index}>
-                    <a
-                      href="#services"
+                    <Link
+                      to="#services"
                       className="text-gray-600 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400 transition-colors"
                     >
                       {service}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
