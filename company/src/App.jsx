@@ -77,8 +77,7 @@ function App() {
                 Contact
               </a>
             </div>
-            <ThemeToggle />
-            <Sheet open={isOpen} onOpenChange={setIsOpen} >
+            <Sheet className="block md:hidden" open={isOpen} onOpenChange={setIsOpen} >
               <SheetTrigger>
                 <MenuIcon className="cursor-pointer text-cyan-500 md:hidden" />
               </SheetTrigger>
@@ -127,6 +126,7 @@ function App() {
                 </SheetDescription>
               </SheetContent>
             </Sheet>
+            <ThemeToggle />
           </div>
         </div>
       </nav>
